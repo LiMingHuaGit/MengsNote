@@ -1,0 +1,60 @@
+/* pages/Note/Note.wxss */
+@import "../../weui.wxss";
+@import "./assets/iconfont.wxss"
+
+Page{
+  /* background-color: hsl(350, 100%, 88%); */
+}
+.note{
+ /* border: solid rgb(228, 120, 120); */
+}
+.option{
+  /* 第一个用于上，第二个用于左、右，第三个用于下*/
+  margin: 10px 8px 5px
+}
+.iconfont {
+  display: inline-block;
+  padding: 8px 8px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.toolbar {
+  box-sizing: border-box;
+  /* border: 1px solid #ccc; */
+  border-bottom: 0;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+.ql-container {
+  box-sizing: border-box;
+  padding: 12px 15px;
+  width: 100%;
+  min-height: 30vh;
+  height: auto;
+  /* border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; */
+  background: #fff;
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.ql-active {
+  color: #06c;
+}
+.type-img{
+  height: 30px;
+  width: 30px;
+}
+.save-btn{
+  font-size: 39rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+}

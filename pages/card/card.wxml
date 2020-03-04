@@ -1,0 +1,12 @@
+<!--pages/card/card.wxml-->
+<view class='main'>
+   <!--正面的框  -->
+   <view class="box b1" animation="{{animationMain}}" bindtap='rotateFn' data-id="1" >
+     <image src=""></image>
+   </view>
+   <!--背面的框  -->
+   <view class="box b2" animation="{{animationBack}}"  bindtap='rotateFn' data-id="2">
+     <image src=""></image>
+   </view>
+   
+</view>

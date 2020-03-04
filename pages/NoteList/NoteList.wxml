@@ -1,0 +1,23 @@
+<!--pages/NoteList/NoteList.wxml-->
+<view class="box">
+  <view class="container" >
+    <view class='flex-item bg1' animation="{{animationMain}}" bindtap='rotateFn' data-id="1"/>
+    <view class='flex-item bg2' animation="{{animationBack}}" bindtap='rotateFn' data-id="2"/>
+    <!-- <view class='flex-item2 bg1' animation="{{animationMain}}" bindtap='rotateFn' data-id="1"/>
+    <view class='flex-item2 bg2' animation="{{animationBack}}" bindtap='rotateFn' data-id="2"/> -->
+    <!-- <view class='flex-item2 bg5'  data-id="1"/>
+    <view class='flex-item2 bg6'  data-id="1"/>
+    <view class='flex-item2 bg7'  data-id="1"/>
+    <view class='flex-item2 bg8'  data-id="1"/>
+    <view class='flex-item2 bg9'  data-id="1"/>
+    <view class='flex-item2 bg2'  data-id="2"/>
+    <view class='flex-item2 bg2'  data-id="2"/>
+    <view class='flex-item2 bg3'  data-id="2"/>
+    <view class='flex-item2 bg4'  data-id="2"/>
+    <view class='flex-item2 bg5'  data-id="2"/>
+    <view class='flex-item2 bg6'  data-id="2"/>
+    <view class='flex-item2 bg7'  data-id="2"/>
+    <view class='flex-item2 bg8'  data-id="2"/>
+    <view class='flex-item2 bg9'  data-id="2"/> -->
+  </view>
+</view>

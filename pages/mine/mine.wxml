@@ -1,0 +1,18 @@
+<!--pages/mine/mine.wxml-->
+<view class='toWrite' bindtap='addImg'>
+  <image src='../../image/xsIcon/001-smartphone.png' style='width:60rpx;height:60rpx;margin-left:15rpx;margin-top:15rpx;' />
+</view>
+<view>
+  <textarea class='input_view' maxlength='-1' auto-height='true' bindinput='inputCon' style='width:{{width-20}}px;' value='{{firstCon}}' placeholder='写点什么...' bindblur="outBlur" id='0'  />
+  <view wx:for="{{dataList}}" style='background-color:white;'>
+    <view class='img_view' style='width:{{width-28}}px;max-height:{{width-28}}px;'>
+      <image style='width:{{width-28}}px;max-height:{{width-28}}px;' src='{{item.pic}}' mode='aspectFill' />
+      <view>
+        <icon type='cancel' bindtap='deletedImg' data-index='{{index}}' size='25' color='#ef8383' style='width:25px;height:25px;margin-left:-35px;margin-top:10px;'></icon>
+      </view>
+    </view>
+    <textarea class='input_view' maxlength='-1' auto-height='true' bindinput='inputCon' style='width:{{width-20}}px;' value='{{item.value}}' placeholder='写点什么...' bindblur="outBlur" id='{{index+1}}'  />
+  </view>
+  <view style='height:45px;width:100%;'></view>
+</view>
+

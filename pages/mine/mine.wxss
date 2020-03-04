@@ -1,0 +1,8 @@
+/* pages/mine/mine.wxss */
+
+image {
+  width: 100%;
+}
+page {
+  /*background-color:#ef7a82;*/
+}
