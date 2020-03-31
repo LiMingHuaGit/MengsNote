@@ -1,8 +1,36 @@
 /* pages/mine/mine.wxss */
-
-image {
-  width: 100%;
-}
 page {
-  /*background-color:#ef7a82;*/
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.name {
+  font-size: 8vh;
+  text-align: center;
+  margin: 18vh 10vh 15vh;
+  font-family:fantasy;
+}
+
+.buttonClassUp{
+  text-align: center;
+  margin: 0px 10rpx 30rpx;
+  font-family:fantasy;
+  background-image: linear-gradient(to top, #a8edea 2%, #fed6e3 100%);
+  font-weight: 800;
+}
+.buttonClassDown{
+  text-align: center;
+  margin: 10rpx 10rpx 10vh;
+  font-family:fantasy;
+  background-color:  #a8edea ;
+  font-weight: 800;
+}
+
+.me {
+  font-size: 3vh;
+  text-align: center;
+  color:cadetblue;
+  margin: 15vh 10rpx 30rpx;
+  font-family:fantasy;
 }

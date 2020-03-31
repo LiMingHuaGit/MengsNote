@@ -1,16 +1,24 @@
 /* pages/Note/Note.wxss */
 @import "../../weui.wxss";
-@import "./assets/iconfont.wxss"
+@import "./assets/iconfont.wxss";
 
 Page{
   /* background-color: hsl(350, 100%, 88%); */
+  /* background-color: #fcefe8; */
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 }
 .note{
  /* border: solid rgb(228, 120, 120); */
 }
 .option{
   /* 第一个用于上，第二个用于左、右，第三个用于下*/
-  margin: 10px 8px 5px
+  margin: 10px 8px 10px
+}
+.title{
+  font-size: 22px;
+}
+.time{
+  margin: 8px 0px 1px;
 }
 .iconfont {
   display: inline-block;
@@ -47,14 +55,16 @@ Page{
 .type-img{
   height: 30px;
   width: 30px;
+  margin: 3px 8px 1px 3px;
 }
 .save-btn{
-  font-size: 39rpx;
-  background: #fff;
+
+  font-family:fantasy;
+  font-weight: 600;
   position: fixed;
   bottom: 0;
   display: flex;
   width: 100%;
   justify-content: center;
-
+  background-image: linear-gradient(40deg, #a8edea 0%, #50c9c3 100%);
 }

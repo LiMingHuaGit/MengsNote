@@ -1,23 +1,14 @@
-<!--pages/NoteList/NoteList.wxml-->
-<view class="box">
-  <view class="container" >
-    <view class='flex-item bg1' animation="{{animationMain}}" bindtap='rotateFn' data-id="1"/>
-    <view class='flex-item bg2' animation="{{animationBack}}" bindtap='rotateFn' data-id="2"/>
-    <!-- <view class='flex-item2 bg1' animation="{{animationMain}}" bindtap='rotateFn' data-id="1"/>
-    <view class='flex-item2 bg2' animation="{{animationBack}}" bindtap='rotateFn' data-id="2"/> -->
-    <!-- <view class='flex-item2 bg5'  data-id="1"/>
-    <view class='flex-item2 bg6'  data-id="1"/>
-    <view class='flex-item2 bg7'  data-id="1"/>
-    <view class='flex-item2 bg8'  data-id="1"/>
-    <view class='flex-item2 bg9'  data-id="1"/>
-    <view class='flex-item2 bg2'  data-id="2"/>
-    <view class='flex-item2 bg2'  data-id="2"/>
-    <view class='flex-item2 bg3'  data-id="2"/>
-    <view class='flex-item2 bg4'  data-id="2"/>
-    <view class='flex-item2 bg5'  data-id="2"/>
-    <view class='flex-item2 bg6'  data-id="2"/>
-    <view class='flex-item2 bg7'  data-id="2"/>
-    <view class='flex-item2 bg8'  data-id="2"/>
-    <view class='flex-item2 bg9'  data-id="2"/> -->
+<view class="noteList" bindtap="noteContent" 
+  data-content ="{{nt.content}}" 
+  data-id ="{{nt._id}}" 
+  data-title ="{{nt.title}}" 
+  data-type ="{{nt.type}}" 
+  data-time ="{{nt.time}}"
+  data-imgid ="{{nt.imgId}}"  
+  wx:for="{{note}}" wx:for-index="index" wx:for-item="nt">
+  <!-- {{index}} -->
+  <view class="row-title">
+  <view class="title">{{nt.title}}<image class="type-img" src="../../image/type/{{nt.type}}.png"></image></view>
   </view>
+  <view class="time">{{nt.time}}</view>
 </view>

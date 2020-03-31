@@ -1,57 +1,16 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/mine/mine",
     "pages/Note/Note",
     "pages/NoteList/NoteList",
-    "pages/mine/mine",
-    "pages/card/card"
+    "pages/NoteContent/NoteContent"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fed6e3",
     "navigationBarTitleText": "李萌萌的记账本",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh":true,
-    "backgroundTextStyle":"dark"
+    "enablePullDownRefresh": true
   },
-  
-  "tabBar": {
-    "color": "#7F8389",
-    "selectedColor": "#FF6200",
-    "backgroundColor": "#fff",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "image/xsIcon/050-home.png",
-        "selectedIconPath": "image/xsIcon/024-zoom.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/Note/Note",
-        "iconPath": "image/xsIcon/043-file.png",
-        "selectedIconPath": "image/xsIcon/024-zoom.png",
-        "text": "写笔记"
-      },
-      {
-        "pagePath": "pages/NoteList/NoteList",
-        "iconPath": "image/xsIcon/045-menu-1.png",
-        "selectedIconPath": "image/xsIcon/024-zoom.png",
-        "text": "笔记列表"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "iconPath": "image/xsIcon/022-users-1.png",
-        "selectedIconPath": "image/xsIcon/024-zoom.png",
-        "text": "我的"
-      },
-      {
-        "pagePath": "pages/card/card",
-        "iconPath": "image/xsIcon/016-gift.png",
-        "selectedIconPath": "image/xsIcon/024-zoom.png",
-        "text": "卡片"
-      }
-    ]
-  },
-  "sitemapLocation": "sitemap47.json"
+  "sitemapLocation": "sitemap.json"
 }

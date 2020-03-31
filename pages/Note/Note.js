@@ -3,15 +3,10 @@ const app = getApp(); //获取应用实例
 //获得util.js的函数,先模块化引用utils里面的js地址,reqiure('js地址')成一个面向对象
 var util = require('../../utils/util.js');
 
-const compareVersion = util.compareVersion
+const compareVersion = util.compareVersion;
+const DB = wx.cloud.database().collection("Note");
 
 Page({
-  onShareAppMessage() {
-    return {
-      title: 'editor',
-      path: 'page/component/pages/editor/editor'
-    }
-  },
 
   data: {
     Time: '',
@@ -19,13 +14,48 @@ Page({
     bottom: 0,
     readOnly: false,
     placeholder: '开始输入...',
+    htmlContent:{},
+    imgFileId:'',
   },
-
-  onLoad: function (options) {
-    var time = util.formatTime(new Date());
-    this.setData({
-      Time: time
-    });
+  
+  NoteSubmit:function(e){
+    var that = this;
+    console.log("数据为",e.detail.value)
+    var title = e.detail.value.title;
+    var time = e.detail.value.time;
+    var type = e.detail.value.type;
+    var imgId = that.data.imgFileId;
+    this.editorCtx.getContents({
+      success(res) {
+        console.log(res)
+        console.log(res.html)
+        const htmlContent = res.html
+        DB.add({
+          data: {
+            title: title,
+            time: time,
+            type: type,
+            content: htmlContent,
+            imgId: imgId
+          },
+          success(res) {
+            console.log("写数据成功", res)
+            wx.redirectTo({
+              url: '/pages/mine/mine'
+            })
+          },
+          fail(res) {
+            console.log("写数据失败", res)
+          },
+        })
+      }
+    })
+  },
+  onShareAppMessage() {
+    return {
+      title: 'editor',
+      path: 'page/component/pages/editor/editor'
+    }
   },
 
   readOnlyChange() {
@@ -34,6 +64,10 @@ Page({
     })
   },
   onLoad() {
+    var time = util.formatTime(new Date());
+    this.setData({
+      Time: time
+    });
     this.canUse = true
     wx.loadFontFace({
       family: 'Pacifico',
@@ -42,16 +76,7 @@ Page({
     })
     const { SDKVersion } = wx.getSystemInfoSync()
 
-    if (compareVersion(SDKVersion, '2.7.0') >= 0) {
-      //
-    } else {
-      this.canUse = false
-      // 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示
-      wx.showModal({
-        title: '提示',
-        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
-      })
-    }
+
   },
 
   onEditorReady() {
@@ -103,22 +128,35 @@ Page({
       text: formatDate
     })
   },
+  
+  // 点击图片将图片插入富文本编辑器里面
   insertImage() {
-    const that = this
+    var that = this;
+    var imgUrl;
     wx.chooseImage({
-      count: 1,
-      success() {
-        that.editorCtx.insertImage({
-          src: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543767268337&di=5a3bbfaeb30149b2afd33a3c7aaa4ead&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20151031%2Ftooopen_sy_147004931368.jpg',
-          data: {
-            id: 'abcd',
-            role: 'god'
+      success: chooseResult => {
+        // 将图片上传至云存储空间
+        wx.cloud.uploadFile({
+          // 指定上传到的云路径
+          cloudPath: (new Date()).getTime() + Math.floor(9 * Math.random())+'2.jpg',
+          // 指定要上传的文件的小程序临时文件路径
+          filePath: chooseResult.tempFilePaths[0],
+          // 成功回调
+          success: res => {
+            console.log('上传成功', res.fileID)
+            imgUrl = res.fileID;
+            this.setData({
+              imgFileId: imgUrl
+            });
+            //插入到富文本中
+            that.editorCtx.insertImage({
+              src: imgUrl,
+            })
           },
-          success() {
-            console.log('insert image success')
-          }
         })
-      }
+      },
     })
+   
   }
+
 })

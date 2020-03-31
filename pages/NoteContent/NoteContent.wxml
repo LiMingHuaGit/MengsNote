@@ -1,0 +1,7 @@
+<view class="row-title">
+  <view class="title">{{title}}<image class="type-img" src="../../image/type/{{type}}.png"></image></view>
+</view>
+<view class="time">{{time}}</view>
+<rich-text nodes="{{content}}"></rich-text>
+<!-- <button class="buttonClassUp" bindtap="ChangeNote">修改笔记</button> -->
+<button class="buttonClassDown" bindtap="RemoveNote" data-id ="{{id}}" data-imgid ="{{imgId}}">删除笔记</button>
