@@ -3,11 +3,11 @@ const DB = wx.cloud.database();
 Page({
   data: {
     content: '',
-    time:'',
-    title:'',
-    id:'',
-    type:'',
-    imgId:''
+    time: '',
+    title: '',
+    id: '',
+    type: '',
+    imgId: ''
   },
   onLoad: function (options) {
     var noteContent = decodeURIComponent(options.content);
@@ -27,7 +27,7 @@ Page({
       imgId: noteImgId
     })
   },
-  RemoveNote(e){
+  RemoveNote(e) {
     var removeId = e.currentTarget.dataset.id;
     var removeImg = e.currentTarget.dataset.imgid;
     console.log(removeImg)
@@ -37,11 +37,11 @@ Page({
       _id: removeId
     }).remove({
       success: function (res) {
-        console.log("删除数据成功",res)
+        console.log("删除数据成功", res)
         wx.cloud.deleteFile({
           fileList: removeList,
           success: res => {
-            console.log("删除图片文件成功"+res.fileList)
+            console.log("删除图片文件成功" + res.fileList)
             wx.redirectTo({
               url: '/pages/NoteList/NoteList'
             })
@@ -52,6 +52,12 @@ Page({
       fail: function (res) {
         console.log("删除数据失败", res)
       },
+    })
+  },
+
+  ChangeNote(e) {
+    wx.navigateTo({
+      url: '/pages/Note/Note?content=' + encodeURIComponent(this.data.content) + '&time=' + this.data.time + '&title=' + this.data.title + '&id=' + this.data.id + '&type=' + this.data.type + '&imgId=' + this.data.imgId + '&isUpdate=' + true,
     })
   }
 })

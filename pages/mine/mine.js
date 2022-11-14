@@ -7,12 +7,12 @@ Page({
   onLoad: function (options) {
     let that = this
   },
-  ToNotePage(){
+  ToNotePage() {
     wx.redirectTo({
       url: '/pages/Note/Note'
     })
   },
-  ToNoteList(){
+  ToNoteList() {
     wx.redirectTo({
       url: '/pages/NoteList/NoteList'
     })

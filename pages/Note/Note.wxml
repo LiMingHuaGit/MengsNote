@@ -2,14 +2,17 @@
 <form bindsubmit="NoteSubmit">
 <view class="note">
   <view class="option">
-    <input name="title" class="title" auto-focus placeholder="标题" bindinput="addTitle"></input>
-    <input name="time" class="time" value="{{Time}}"></input>
+    <input name="title" class="title" auto-focus placeholder="{{placeholder.titlePlaceholder}}" value="{{value.Title}}"></input>
+    <input name="time" class="time" value="{{value.Time}}"></input>
     <text>记录心情：</text>
     <radio-group name="type" class="type">  
-    <radio value="happy" checked="true"> <image src="../../image/type/happy.png" class="type-img"/></radio>
+    <!-- <radio value="happy"> <image src="../../image/type/happy.png" class="type-img"/></radio>
     <radio value="cry"> <image src="../../image/type/cry.png" class="type-img"/></radio>
     <radio value="angry"> <image src="../../image/type/angry.png" class="type-img"/></radio>
-    <radio value="smile"> <image src="../../image/type/smile.png" class="type-img"/></radio>
+    <radio value="smile"> <image src="../../image/type/smile.png" class="type-img"/></radio> -->
+    <radio  wx:key="*this" wx:for="{{typeRadio}}" wx:for-item="item" value="{{item}}" checked="{{value.Type==item}}">
+        <image src="../../image/type/{{item}}.png" class="type-img"/>
+    </radio>
     </radio-group>
   </view>
 
@@ -32,7 +35,7 @@
         <i class="iconfont icon-zitishangbiao {{formats.script === 'super' ? 'ql-active' : ''}}" data-name="script" data-value="super"></i>
         <!-- <i class="iconfont icon-quanping"></i> -->
       </view>
-      <editor class="noteEditor" id="editor" class="ql-container" placeholder="{{placeholder}}" showImgSize showImgToolbar showImgResize bindstatuschange="onStatusChange"  read-only="{{readOnly}}" bindready="onEditorReady">
+      <editor class="noteEditor" id="editor" class="ql-container" placeholder="{{placeholder.contentPlaceholder}}" showImgSize showImgToolbar showImgResize bindstatuschange="onStatusChange"  read-only="{{readOnly}}" bindready="onEditorReady">
       </editor>
 
   <button formType="submit" type="default" size="default" class="save-btn">保存</button>

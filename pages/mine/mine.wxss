@@ -1,7 +1,7 @@
 /* pages/mine/mine.wxss */
 page {
-  background-repeat:no-repeat;
-  background-size:100% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 }
 
@@ -9,28 +9,29 @@ page {
   font-size: 8vh;
   text-align: center;
   margin: 18vh 10vh 15vh;
-  font-family:fantasy;
+  font-family: Impact, Haettenschweiler, ‘Arial Narrow Bold’, sans-serif;
 }
 
-.buttonClassUp{
+.buttonClassUp {
   text-align: center;
   margin: 0px 10rpx 30rpx;
-  font-family:fantasy;
+  font-family: Apple LiGothic Medium;
   background-image: linear-gradient(to top, #a8edea 2%, #fed6e3 100%);
   font-weight: 800;
 }
-.buttonClassDown{
+
+.buttonClassDown {
   text-align: center;
   margin: 10rpx 10rpx 10vh;
-  font-family:fantasy;
-  background-color:  #a8edea ;
+  font-family: Apple LiGothic Medium;
+  background-color: #a8edea;
   font-weight: 800;
 }
 
 .me {
   font-size: 3vh;
   text-align: center;
-  color:cadetblue;
+  color: cadetblue;
   margin: 15vh 10rpx 30rpx;
-  font-family:fantasy;
+  font-family: Impact, Haettenschweiler, ‘Arial Narrow Bold’, sans-serif;
 }

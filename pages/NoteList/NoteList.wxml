@@ -1,14 +1,8 @@
-<view class="noteList" bindtap="noteContent" 
-  data-content ="{{nt.content}}" 
-  data-id ="{{nt._id}}" 
-  data-title ="{{nt.title}}" 
-  data-type ="{{nt.type}}" 
-  data-time ="{{nt.time}}"
-  data-imgid ="{{nt.imgId}}"  
-  wx:for="{{note}}" wx:for-index="index" wx:for-item="nt">
+<view class="noteList" bindtap="noteContent" data-content="{{nt.content}}" data-id="{{nt._id}}" data-title="{{nt.title}}" data-type="{{nt.type}}" data-time="{{nt.time}}" data-imgid="{{nt.imgId}}" wx:for="{{note}}" wx:key="_id" wx:for-item="nt">
   <!-- {{index}} -->
   <view class="row-title">
-  <view class="title">{{nt.title}}<image class="type-img" src="../../image/type/{{nt.type}}.png"></image></view>
+    <view class="title">{{nt.title}}<image class="type-img" src="../../image/type/{{nt.type}}.png"></image>
+    </view>
   </view>
   <view class="time">{{nt.time}}</view>
 </view>

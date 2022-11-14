@@ -2,11 +2,11 @@ const DB = wx.cloud.database().collection("Note");
 var util = require('../../utils/util.js');
 Page({
   data: {
-   note:[],
-   note_nums:0//笔记数量
+    note: [],
+    note_nums: 0 //笔记数量
   },
   //onload查询数据
-  onLoad(){
+  onLoad() {
     this.getData();
   },
   //下拉刷新
@@ -16,8 +16,8 @@ Page({
     });
   },
   /**
-     * 页面上拉触底事件的处理函数
-     */
+   * 页面上拉触底事件的处理函数
+   */
   onReachBottom: function () {
     wx.showLoading({
       title: '刷新中！',
@@ -50,7 +50,7 @@ Page({
   },
 
   //跳转笔记详情页面
-  noteContent(e){
+  noteContent(e) {
     // 拿到对应参数 有两种方式都可以拿到对应的参数
     console.log('', e.currentTarget.dataset.content)
     var content = e.currentTarget.dataset.content;
@@ -64,14 +64,14 @@ Page({
     })
   },
   //查询数据
-  getData(){
+  getData() {
     var that = this;
     DB.orderBy('time', 'desc').skip(0).get({
       success(res) {
         console.log("读数据成功", res.data)
         that.data.note = res.data.concat(that.data.note);
         that.setData({
-          'note': that.data.note, 
+          'note': that.data.note,
         });
         console.log(that.data.note)
       },

@@ -1,4 +1,5 @@
 <view class="name">Meng's NotePad</view>
 <button class="buttonClassUp" bindtap="ToNotePage">记一笔帐</button>
 <button class="buttonClassDown" bindtap="ToNoteList">帐薄</button>
+<view class="me">由于微信云开发环境收费，不再提供云端笔记保存功能</view>
 <view class="me">coding by LiMingMing</view>
