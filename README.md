@@ -1,5 +1,5 @@
 # MengsNote 
-一款为女朋友开发的日记本微信小程序，目前实现了富文本撰写并存储日记，展示日记列表，日记详情，删除日记这些功能。   
+一款为女朋友开发的日记本微信小程序，目前实现了基础的增删改查功能。   
 ## 演示效果   
 ### 首页   
 ![image](https://github.com/LiMingHuaGit/MengsNote/blob/master/image/sample/home.png)   
