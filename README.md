@@ -8,7 +8,7 @@
 ### 列表展示   
 ![image](https://github.com/LiMingHuaGit/MengsNote/blob/master/image/sample/List.png)   
 ### 内容展示   
-![image](hhttps://github.com/LiMingHuaGit/MengsNote/blob/master/image/sample/content.png)   
+![image](https://github.com/LiMingHuaGit/MengsNote/blob/master/image/sample/content.png)   
 ### 体验二维码   
 ![image](https://github.com/LiMingHuaGit/MengsNote/blob/master/image/sample/gh_7481059f2a14_344.jpg)   
 > 各位大佬扫进去看一眼就行了，蒟蒻的免费云环境经不起折腾 
